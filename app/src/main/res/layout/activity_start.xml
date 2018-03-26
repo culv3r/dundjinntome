@@ -47,7 +47,7 @@
             android:contentDescription="@string/new_character_button"
             android:text="@string/new_character"
             android:fontFamily="serif"
-            android:textSize="24pt"
+            android:textSize="20pt"
             />
 
         <Button
@@ -59,8 +59,8 @@
             android:contentDescription="@string/load_character_button"
             android:text="@string/load_character"
             android:fontFamily="serif"
-            android:textSize="24pt"
-            android:visibility="gone"
+            android:textSize="20pt"
+            android:visibility="visible"
             />
     </RelativeLayout>
 </LinearLayout>
