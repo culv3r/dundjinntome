@@ -1,9 +1,11 @@
-package io.roll.dundjinntome;
+package io.roll.dundjinntome.start;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import io.roll.dundjinntome.R;
+
+public class StartActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
