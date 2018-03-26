@@ -22,9 +22,9 @@ import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
-import com.example.android.architecture.blueprints.todoapp.data.Task;
-
 import java.util.List;
+
+import io.roll.dundjinntome.data.Task;
 
 /**
  * Data Access Object for the tasks table.

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/charMain"
+        android:icon="@drawable/person_icon"
+        android:title="@string/main_page"
+        android:contentDescription="@string/main_page_button"
+        app:showAsAction="withText"/>
+    <item android:id="@+id/skills"
+        android:icon="@drawable/skill_icon"
+        android:title="@string/skill_text"
+        android:contentDescription="@string/skills_button"
+        app:showAsAction="withText"/>
+
+</menu>
