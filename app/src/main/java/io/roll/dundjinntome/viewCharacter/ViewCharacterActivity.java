@@ -1,5 +1,7 @@
 package io.roll.dundjinntome.viewCharacter;
 
+import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -8,10 +10,15 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import io.roll.dundjinntome.R;
+import io.roll.dundjinntome.start.StartActivity;
 
 /**
  * Created by culv3r on 3/15/18.
@@ -25,6 +32,22 @@ public class ViewCharacterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_character);
+
+        TextView hp = findViewById(R.id.healthOver);
+        TextView ac = findViewById(R.id.ACOver);
+        TextView xp = findViewById(R.id.xpText);
+        int testHealth,testMaxHlth,testArmor,testXP;
+        testHealth = 39;
+        testMaxHlth = 50;
+        testArmor = 18;
+        testXP = 349;
+        hp.setText(getString(R.string.hpOver, testHealth, testMaxHlth));
+        ac.setText(getString(R.string.armorclass, testArmor));
+        xp.setText(getString(R.string.xp_text, testXP));
+
+        // Get the Intent that started this activity
+        Intent intent = getIntent();
+
         mDrawerLayout = findViewById(R.id.drawer_layout);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -32,6 +55,7 @@ public class ViewCharacterActivity extends AppCompatActivity {
         if (actionbar != null) {
             actionbar.setDisplayHomeAsUpEnabled(true);
             actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
+            actionbar.setTitle("");
         }
 
         mDrawerLayout.addDrawerListener(
@@ -74,8 +98,6 @@ public class ViewCharacterActivity extends AppCompatActivity {
                         return true;
                     }
                 });
-
-
 
     }
 

@@ -2,12 +2,21 @@
     <string name="app_name">Dundjinn Tome</string>
     <string name="dundjinn_tome_logo">Dundjinn Tome Logo</string>
     <string name="dundjinn_tome_text">Dundjinn Tome Text</string>
-    <string name="new_character_button">New Character Button</string>
+    <string name="new_character_button">New Character</string>
     <string name="new_character">New Character</string>
     <string name="load_character">Load Character</string>
-    <string name="load_character_button">Load Character Button</string>
+    <string name="load_character_button">Load Character</string>
     <string name="main_page">Main Page</string>
     <string name="skill_text">Skills</string>
-    <string name="main_page_button">Main Page Button</string>
-    <string name="skills_button">Skills Button</string>
+    <string name="main_page_button">Main Page</string>
+    <string name="skills_button">Skills</string>
+    <string name="hpOver">%1$d/%2$d</string>
+    <string name="current_health_over">Current Health</string>
+    <string name="hp_logo">HP Logo</string>
+    <string name="armorclass">%1$d</string>
+    <string name="tb_armor">Armor Class</string>
+    <string name="armor_class_logo">Armor Class Logo</string>
+    <string name="xp_text">%1$d XP</string>
+    <string name="tb_xp">Experience</string>
+    <string name="xp_icon">Experience Icon</string>
 </resources>
