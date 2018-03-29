@@ -91,20 +91,12 @@ android:fitsSystemWindows="true">
                 />
         </FrameLayout>
 
-        <GridLayout
-            android:layout_width="match_parent"
+        <FrameLayout
+            android:id="@+id/fragment_placeholder"
+            android:layout_weight="0.011"
+            android:layout_width="0px"
             android:layout_height="match_parent"
-            android:columnCount="4"
-            android:layout_weight="0.011">
-            <TextView
-                android:id="@+id/charName"
-                android:layout_rowSpan="2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Character Name"
-                android:textSize="12pt"
-                />
-        </GridLayout>
+            />
 
     </LinearLayout>
 

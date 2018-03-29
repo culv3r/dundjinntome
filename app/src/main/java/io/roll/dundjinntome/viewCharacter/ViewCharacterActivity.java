@@ -1,10 +1,13 @@
 package io.roll.dundjinntome.viewCharacter;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -15,7 +18,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
 
 import io.roll.dundjinntome.R;
 import io.roll.dundjinntome.start.StartActivity;
@@ -27,6 +29,13 @@ import io.roll.dundjinntome.start.StartActivity;
 public class ViewCharacterActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
+    private MainFragment mainFragment = new MainFragment();
+    private SkillFragment skillFragment = new SkillFragment();
+    private EquipmentFragment equipmentFragment = new EquipmentFragment();
+    private SpellFragment spellFragment = new SpellFragment();
+    private FeatureFragment featureFragment= new FeatureFragment();
+    private FAQFragment faqFragment = new FAQFragment();
+    private LegalFragment legalFragment = new LegalFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +108,12 @@ public class ViewCharacterActivity extends AppCompatActivity {
                     }
                 });
 
+    }
+
+    public void init(){
+        // Add the fragment to the 'fragment_placeholder' FrameLayout
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.fragment_placeholder, mainFragment).commit();
     }
 
     @Override
