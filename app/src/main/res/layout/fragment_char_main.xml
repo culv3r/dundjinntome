@@ -1,14 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/char_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".viewCharacter.MainFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/nameClass"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintHorizontal_chainStyle="packed">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/charName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="14pt"
+            android:layout_weight="1"
+            android:text="@string/charname"
+            android:paddingStart="90dp"
+            />
+
+        <TextView
+            android:id="@+id/charClass"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:paddingEnd="90dp"
+            android:textSize="14pt"
+            android:text="@string/charclass"
+            android:textAlignment="center"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@id/nameClass">
+        <ImageView
+            android:id="@+id/hpLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.0"
+            android:contentDescription="@string/hp_logo"
+            app:srcCompat="@drawable/dt_health" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:text="@string/hpOver"
+            android:textSize="14pt"
+            />
+
+        <ImageView
+            android:id="@+id/acLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.0"
+            android:contentDescription="@string/armor_class_logo"
+            app:srcCompat="@drawable/dt_shield" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_weight="0.1"
+            android:layout_height="wrap_content"
+            android:textSize="14pt"
+            android:text="@string/armorclass"
+            />
+
+        <ImageView
+            android:id="@+id/lvLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.0"
+            android:contentDescription="@string/level"
+            app:srcCompat="@drawable/dt_level_icon" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_weight="0.2"
+            android:layout_height="wrap_content"
+            android:textSize="14pt"
+            android:text="@string/charlevel"
+            />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

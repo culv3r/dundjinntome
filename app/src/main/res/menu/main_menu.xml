@@ -12,5 +12,42 @@
         android:title="@string/skill_text"
         android:contentDescription="@string/skills_button"
         app:showAsAction="withText"/>
+    <item android:id="@+id/equipment"
+        android:icon="@drawable/dt_equip_icon"
+        android:title="@string/equipment"
+        android:contentDescription="@string/equipment"
+        app:showAsAction="withText"
+        />
+    <item android:id="@+id/spells"
+        android:icon="@drawable/dt_spell_icon"
+        android:title="@string/spells"
+        android:contentDescription="@string/spells"
+        app:showAsAction="withText"
+        />
+    <item android:id="@+id/compendium"
+        android:icon="@drawable/dt_compendium_icon"
+        android:title="@string/compendium"
+        android:contentDescription="@string/compendium"
+        app:showAsAction="withText"
+        />
+    <item android:id="@+id/features"
+        android:icon="@drawable/dt_feature_icon"
+        android:title="@string/class_features"
+        android:contentDescription="@string/class_features"
+        app:showAsAction="withText"
+        />
+    <item android:id="@+id/faq"
+        android:icon="@drawable/dt_faq_icon"
+        android:title="@string/faq"
+        android:contentDescription="@string/faq"
+        app:showAsAction="withText"
+        />
+    <item android:id="@+id/legal"
+        android:icon="@drawable/ic_gavel"
+        android:title="@string/legal"
+        android:contentDescription="@string/legal"
+        app:showAsAction="withText"
+        />
+
 
 </menu>

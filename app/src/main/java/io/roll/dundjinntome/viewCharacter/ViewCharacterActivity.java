@@ -1,9 +1,12 @@
 package io.roll.dundjinntome.viewCharacter;
 
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -17,16 +20,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import io.roll.dundjinntome.R;
 import io.roll.dundjinntome.start.StartActivity;
+import io.roll.dundjinntome.viewCharacter.dummy.DummyContent;
 
 /**
  * Created by culv3r on 3/15/18.
  */
 
-public class ViewCharacterActivity extends AppCompatActivity {
+public class ViewCharacterActivity extends AppCompatActivity implements
+        MainFragment.OnFragmentInteractionListener, SkillFragment.OnListFragmentInteractionListener,
+        EquipmentFragment.OnListFragmentInteractionListener,
+        SpellFragment.OnFragmentInteractionListener, FeatureFragment.OnFragmentInteractionListener,
+        FAQFragment.OnFragmentInteractionListener, LegalFragment.OnFragmentInteractionListener{
 
     private DrawerLayout mDrawerLayout;
     private MainFragment mainFragment = new MainFragment();
@@ -67,6 +76,10 @@ public class ViewCharacterActivity extends AppCompatActivity {
             actionbar.setTitle("");
         }
 
+        // Add the fragment to the 'fragment_placeholder' FrameLayout
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.fragment_placeholder, mainFragment).commit();
+
         mDrawerLayout.addDrawerListener(
                 new DrawerLayout.DrawerListener() {
                     @Override
@@ -97,23 +110,72 @@ public class ViewCharacterActivity extends AppCompatActivity {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         // set item as selected to persist highlight
-                        menuItem.setChecked(true);
+                        //menuItem.setChecked(true);
                         // close drawer when item is tapped
                         mDrawerLayout.closeDrawers();
 
                         // Add code here to update the UI based on the item selected
                         // For example, swap UI fragments here
 
+                        switch(menuItem.toString()){
+                            case "Main Page": {
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.fragment_placeholder, mainFragment).commit();
+                                break;
+                            }
+                            case "Skills": {
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.fragment_placeholder, skillFragment).commit();
+                                break;
+                            }
+                            case "Equipment":{
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.fragment_placeholder, equipmentFragment).commit();
+                                break;
+                            }
+                            case "Spells":{
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.fragment_placeholder, spellFragment).commit();
+                                break;
+                            }
+                            case "Compendium":{
+                                Context context = getApplicationContext();
+                                CharSequence text = "This would show the compendium.";
+                                int duration = Toast.LENGTH_SHORT;
+
+                                Toast toast = Toast.makeText(context, text, duration);
+                                toast.show();
+                                break;
+                            }
+                            case "Class Features":{
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.fragment_placeholder, featureFragment).commit();
+                                break;
+                            }
+                            case "FAQ":{
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.fragment_placeholder, faqFragment).commit();
+                                break;
+                            }
+                            case "Legal":{
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.fragment_placeholder, legalFragment).commit();
+                                break;
+                            }
+                            default: {
+                                Context context = getApplicationContext();
+                                CharSequence text = "Something Broke";
+                                int duration = Toast.LENGTH_SHORT;
+
+                                Toast toast = Toast.makeText(context, text, duration);
+                                toast.show();
+                            }
+                        }
+
                         return true;
                     }
                 });
 
-    }
-
-    public void init(){
-        // Add the fragment to the 'fragment_placeholder' FrameLayout
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_placeholder, mainFragment).commit();
     }
 
     @Override
@@ -124,5 +186,15 @@ public class ViewCharacterActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+
     }
 }

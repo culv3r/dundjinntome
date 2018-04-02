@@ -22,4 +22,14 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="equipment">Equipment</string>
+    <string name="spells">Spells</string>
+    <string name="compendium">Compendium</string>
+    <string name="class_features">Class Features</string>
+    <string name="faq">FAQ</string>
+    <string name="legal">Legal</string>
+    <string name="charname">{charName}</string>
+    <string name="charclass">{charClass}</string>
+    <string name="charlevel">{charLevel}</string>
+    <string name="level">Level</string>
 </resources>
