@@ -1,7 +1,8 @@
-package io.roll.dundjinntome.viewCharacter;
+package io.roll.dundjinntome.start;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,12 +10,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import io.roll.dundjinntome.util.CharGenHelper;
+import android.widget.Button;
 
 import io.roll.dundjinntome.R;
-import io.roll.dundjinntome.data.CharInst;
-import io.roll.dundjinntome.data.SkillObj;
+import io.roll.dundjinntome.data.CharContent;
 
-import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -23,30 +24,37 @@ import java.util.List;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class SkillFragment extends Fragment {
-
-    private CharInst charInst = CharInst.getInstance();
+public class CharacterFragment extends DialogFragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
-    private int mColumnCount = 1;
+    private int mColumnCount = 2;
+    private static CharacterFragment fragment = null;
     private OnListFragmentInteractionListener mListener;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public SkillFragment() {
+    public CharacterFragment() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static SkillFragment newInstance(int columnCount) {
-        SkillFragment fragment = new SkillFragment();
-        Bundle args = new Bundle();
-        args.putInt(ARG_COLUMN_COUNT, columnCount);
-        fragment.setArguments(args);
+    public static CharacterFragment newInstance(int columnCount) {
+        if (fragment == null){
+            fragment = new CharacterFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_COLUMN_COUNT, columnCount);
+            fragment.setArguments(args);
+            return fragment;}
+        else{
+            return fragment;
+        }
+    }
+
+    public static CharacterFragment getFragment(){
         return fragment;
     }
 
@@ -62,8 +70,8 @@ public class SkillFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_skill_list, container, false);
-
+        View view = inflater.inflate(R.layout.fragment_character_list, container, false);
+        getDialog().setTitle("Load Character");
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
@@ -73,8 +81,9 @@ public class SkillFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MySkillRecyclerViewAdapter(SkillObj.skillList, mListener));
+            recyclerView.setAdapter(new MyCharacterRecyclerViewAdapter(CharContent.CHARS, mListener));
         }
+
         return view;
     }
 
@@ -106,8 +115,11 @@ public class SkillFragment extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
+
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(SkillObj.Skill obj);
+
+        void onListFragmentInteraction(CharContent.CharObj item);
+
     }
 }

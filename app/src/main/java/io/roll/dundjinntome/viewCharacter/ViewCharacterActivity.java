@@ -24,8 +24,12 @@ import android.widget.Toast;
 
 
 import io.roll.dundjinntome.R;
+import io.roll.dundjinntome.data.CharInst;
+import io.roll.dundjinntome.data.SkillObj;
 import io.roll.dundjinntome.start.StartActivity;
 import io.roll.dundjinntome.viewCharacter.dummy.DummyContent;
+
+import static io.roll.dundjinntome.data.SkillObj.charInst;
 
 /**
  * Created by culv3r on 3/15/18.
@@ -36,6 +40,8 @@ public class ViewCharacterActivity extends AppCompatActivity implements
         EquipmentFragment.OnListFragmentInteractionListener,
         SpellFragment.OnFragmentInteractionListener, FeatureFragment.OnFragmentInteractionListener,
         FAQFragment.OnFragmentInteractionListener, LegalFragment.OnFragmentInteractionListener{
+
+    public CharInst charInst = CharInst.getInstance();
 
     private DrawerLayout mDrawerLayout;
     private MainFragment mainFragment = new MainFragment();
@@ -51,14 +57,19 @@ public class ViewCharacterActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_character);
 
+        if (charInst.getAC() < 10){
+            int[] stats = {12, 10, 14, 11, 18, 8};
+            charInst.initializeCharacter("Corvus", "Cleric", 39, 39, 18, 5000, 4, stats);
+        }
+
         TextView hp = findViewById(R.id.healthOver);
         TextView ac = findViewById(R.id.ACOver);
         TextView xp = findViewById(R.id.xpText);
         int testHealth,testMaxHlth,testArmor,testXP;
-        testHealth = 39;
-        testMaxHlth = 50;
-        testArmor = 18;
-        testXP = 349;
+        testHealth = charInst.getHP();
+        testMaxHlth = charInst.getMaxHP();
+        testArmor = charInst.getAC();
+        testXP = charInst.getXP();
         hp.setText(getString(R.string.hpOver, testHealth, testMaxHlth));
         ac.setText(getString(R.string.armorclass, testArmor));
         xp.setText(getString(R.string.xp_text, testXP));
@@ -190,6 +201,11 @@ public class ViewCharacterActivity extends AppCompatActivity implements
 
     @Override
     public void onFragmentInteraction(Uri uri) {
+
+    }
+
+    @Override
+    public void onListFragmentInteraction(SkillObj.Skill obj) {
 
     }
 

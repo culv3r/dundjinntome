@@ -14,7 +14,7 @@
         app:layout_constraintHorizontal_chainStyle="packed">
 
         <TextView
-            android:id="@+id/charName"
+            android:id="@+id/charNameMain"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="14pt"
@@ -24,7 +24,7 @@
             />
 
         <TextView
-            android:id="@+id/charClass"
+            android:id="@+id/charClassMain"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
             app:srcCompat="@drawable/dt_health" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/healthOverMain"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
@@ -67,7 +67,7 @@
             app:srcCompat="@drawable/dt_shield" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/ACOverMain"
             android:layout_width="0dp"
             android:layout_weight="0.1"
             android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
             app:srcCompat="@drawable/dt_level_icon" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/charLevelMain"
             android:layout_width="0dp"
             android:layout_weight="0.2"
             android:layout_height="wrap_content"

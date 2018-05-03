@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".newCharacter.MakeCharacterActivity">
+
+    <TextView
+        android:id="@+id/nameChar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Name"
+        android:text="Name"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="20dp"
+        tools:text="Name:" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintLeft_toRightOf="@id/chaName"
+        android:layout_marginStart="20dp"
+        />    
+    
+    <TextView
+        android:id="@+id/nameRace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Race"
+        android:text="Race:"
+        app:layout_constraintTop_toBottomOf="@id/editName"
+        tools:text="Race:" />
+
+    <Spinner
+        android:id="@+id/raceSpinner"
+        android:layout_width="339dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/race"
+        app:layout_constraintTop_toBottomOf="@id/editName"
+        app:layout_constraintLeft_toRightOf="@id/nameRace"
+         />
+
+    <TextView
+        android:id="@+id/className"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Class"
+        android:text="Class"
+        app:layout_constraintTop_toBottomOf="@id/nameRace"
+        tools:text="Class:" />
+
+    <Spinner
+        android:id="@+id/classSpinner"
+        android:layout_width="334dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/charClass"
+        app:layout_constraintTop_toTopOf="@id/className"
+        app:layout_constraintLeft_toRightOf="@id/className"
+        />
+
+    <TextView
+        android:id="@+id/nameExp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Experience"
+        android:text="Exp"
+        app:layout_constraintTop_toBottomOf="@id/className"
+        android:layout_marginTop="10dp"
+        tools:text="Exp" />
+
+    <EditText
+        android:id="@+id/editExp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Exp"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/classSpinner"
+        app:layout_constraintLeft_toRightOf="@id/nameExp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <TextView
+        android:id="@+id/strName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Strength"
+        android:text="Str"
+        app:layout_constraintTop_toBottomOf="@id/editExp"
+        tools:text="Str" />
+
+    <Spinner
+        android:id="@+id/strSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/attrLevel"
+        app:layout_constraintTop_toBottomOf="@id/editExp"
+        app:layout_constraintLeft_toRightOf="@id/strName"
+        android:layout_marginLeft="20dp"
+        />
+
+    <TextView
+        android:id="@+id/dexName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Dexterity"
+        android:text="Dex"
+        app:layout_constraintTop_toTopOf="@id/dexSpinner"
+        tools:text="Dex" />
+
+    <Spinner
+        android:id="@+id/dexSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/attrLevel"
+        app:layout_constraintTop_toBottomOf="@id/strSpinner"
+        app:layout_constraintLeft_toRightOf="@id/dexName"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        android:id="@+id/conName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Constitution"
+        android:text="Con"
+        app:layout_constraintTop_toTopOf="@id/conSpinner"
+        tools:text="Con" />
+
+    <Spinner
+        android:id="@+id/conSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/attrLevel"
+        app:layout_constraintTop_toBottomOf="@id/dexSpinner"
+        app:layout_constraintLeft_toRightOf="@id/conName"
+        android:layout_marginLeft="15dp"/>
+
+
+    <TextView
+        android:id="@+id/intName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Intelligence"
+        android:text="Int"
+        app:layout_constraintTop_toTopOf="@id/intSpinner"
+        tools:text="Int" />
+
+    <Spinner
+        android:id="@+id/intSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/attrLevel"
+        app:layout_constraintTop_toBottomOf="@id/conSpinner"
+        app:layout_constraintLeft_toRightOf="@id/intName"
+        android:layout_marginLeft="24dp" />
+
+    <TextView
+        android:id="@+id/wisName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Wisdom"
+        android:text="Wis"
+        app:layout_constraintTop_toTopOf="@id/wisSpinner"
+        tools:text="Wis" />
+
+    <Spinner
+        android:id="@+id/wisSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/attrLevel"
+        app:layout_constraintTop_toBottomOf="@id/intSpinner"
+        app:layout_constraintLeft_toRightOf="@id/wisName"
+        android:layout_marginLeft="18dp"/>
+
+    <TextView
+        android:id="@+id/chaName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Charisma"
+        android:text="Cha"
+        app:layout_constraintTop_toTopOf="@id/chaSpinner"
+        tools:text="Cha" />
+
+    <Spinner
+        android:id="@+id/chaSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/attrLevel"
+        app:layout_constraintTop_toBottomOf="@id/wisSpinner"
+        app:layout_constraintLeft_toRightOf="@id/chaName"
+        android:layout_marginLeft="17dp"/>
+
+    <TextView
+        android:id="@+id/nameHP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Hit Points"
+        android:text="HP"
+        app:layout_constraintTop_toBottomOf="@id/chaSpinner"
+        android:layout_marginTop="10dp"
+        tools:text="HP" />
+
+    <EditText
+        android:id="@+id/editHP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="HP"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/chaSpinner"
+        app:layout_constraintLeft_toRightOf="@id/nameHP"
+        android:layout_marginLeft="24dp" />
+
+    <TextView
+        android:id="@+id/nameAC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Armor Class"
+        android:text="AC"
+        app:layout_constraintTop_toBottomOf="@id/editHP"
+        android:layout_marginTop="10dp"
+        tools:text="AC" />
+
+    <EditText
+        android:id="@+id/editAC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="AC"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/editHP"
+        app:layout_constraintLeft_toRightOf="@id/nameAC"
+        android:layout_marginLeft="24dp" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Save"
+        android:text="Save"
+        app:layout_constraintTop_toBottomOf="@id/editAC"
+        tools:text="Save" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Cancel"
+        android:text="Cancel"
+        app:layout_constraintTop_toBottomOf="@id/editAC"
+        app:layout_constraintLeft_toRightOf="@id/saveButton"
+        tools:text="Cancel" />
+</android.support.constraint.ConstraintLayout>

@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".viewCharacter.ViewCharacterActivity" />
+        <activity android:name=".newCharacter.MakeCharacterActivity"></activity>
     </application>
 
 </manifest>

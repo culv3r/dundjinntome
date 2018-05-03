@@ -28,8 +28,49 @@
     <string name="class_features">Class Features</string>
     <string name="faq">FAQ</string>
     <string name="legal">Legal</string>
-    <string name="charname">{charName}</string>
-    <string name="charclass">{charClass}</string>
-    <string name="charlevel">{charLevel}</string>
+    <string name="charname">%1$s</string>
+    <string name="charclass">%1$s</string>
+    <string name="charlevel">%1$d</string>
     <string name="level">Level</string>
+    <string name="fragment_back">Back</string>
+    <string name="back_desc">Return to Main Menu</string>
+    <string name="rollText">Roll</string>
+    <string-array name="race">
+        <item>Human</item>
+        <item>Elf</item>
+        <item>Dwarf</item>
+        <item>Gnome</item>
+        <item>Dragonborn</item>
+        <item>Halfling</item>
+        <item>Half-Elf</item>
+        <item>Half-Orc</item>
+        <item>Tiefling</item>
+    </string-array>
+    <string-array name="charClass">
+        <item>Barbarian</item>
+        <item>Cleric</item>
+        <item>Druid</item>
+        <item>Fighter</item>
+        <item>Monk</item>
+        <item>Ranger</item>
+        <item>Rogue</item>
+        <item>Sorcerer</item>
+        <item>Warlock</item>
+        <item>Wizard</item>
+    </string-array>
+    <string-array name="attrLevel">
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+    </string-array>
 </resources>
